@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Watchlist</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Github Corner -->
+        <a
+         href="https://github.com/Mukulsehrawat07"
+         class="github-button"
+         aria-label="View source on Github"
+         target="_blank"
+         rel="noopener">
+         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <title>© 2026 | Mukul</title>
+         <path  
+          d="M12 .297c-6.63 0-12 5.373-12 12 
+             0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+             0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+             C4.422 18.07 3.633 17.7 3.633 17.7 
+             c-1.087-.744.084-.729.084-.729 
+             1.205.084 1.838 1.236 1.838 1.236 
+             1.07 1.835 2.809 1.305 3.495.998 
+             .108-.776.417-1.305.76-1.605 
+             -2.665-.3-5.466-1.332-5.466-5.93 
+             0-1.31.465-2.38 1.235-3.22 
+             -.135-.303-.54-1.523.105-3.176 
+             0 0 1.005-.322 3.3 1.23 
+             .96-.267 1.98-.399 3-.405 
+             1.02.006 2.04.138 3 .405 
+             2.28-1.552 3.285-1.23 3.285-1.23 
+             .645 1.653.24 2.873.12 3.176 
+             .765.84 1.23 1.91 1.23 3.22 
+             0 4.61-2.805 5.625-5.475 5.92 
+             .42.36.81 1.096.81 2.22 
+             0 1.606-.015 2.896-.015 3.286 
+             0 .315.21.69.825.57 
+             C20.565 22.092 24 17.592 24 12.297 
+             c0-6.627-5.373-12-12-12"
+             />
+         </svg>
+        </a>
+        <!-- GitHub Corner -->
+        
+        <div class="app">
+            <header>
+                <nav>
+                    <img src="/imgs/pixl2.gif" alt="divider stars" />
+                    <a href="watchlist.html">My Watchlist</a>
+                    <img src="/imgs/pixl2.gif" alt="divider stars" />
+                </nav>
+                
+                <div class="window-section">
+                    <div class="window-title">
+                        Movie Watchlist.app
+                        <img class="win-icon" src="/imgs/win.webp" alt="x"/>
+                    </div>
+                    
+                    <div class="window-main">
+                        <span class="intro">
+                            <img src="/imgs/pixl1.gif" alt="cute green ghost"/>
+                            <p>
+                                Search for movies, build your watchlist, revisit later.<br />
+                                No algorithms. No nonsense. Just you and your films.
+                            </p>
+                        </span>
+                        <div class="search-bar">
+                            <input
+                             type="search"
+                             id="searchInput"
+                             placeholder="Search for a film..."
+                             />
+                             <button id="searchBtn" type="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <main>
+                <div class="window-section">
+                    <div class="window-title">
+                        Search Results
+                        <img class="win-icon" src="/imgs/win.webp" alt="x" />
+                    </div>
+                    
+                    <div class="window-main">
+                        <div class="results" id="results">
+                            <span class="message" id="message">
+                                <svg  
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="32"
+                                  height="32"
+                                  viewBox="0 0 32 32"
+                                  >
+                                   <path    
+                                     fill="currentColor"
+                                     d="M25.14 0v1.52h3.05v1.53h1.52v1.52h-3.04V3.05h-1.53V1.52h-6.09v1.53h3.04v1.52h1.53v1.52h-3.05V4.57h-1.52V3.05h-6.1v1.52H16v1.52h1.52v1.53h-3.04V6.09h-1.53V4.57H6.86v1.52H9.9v1.53h1.53v1.52H8.38V7.62H6.86V6.09H.76v24.38h1.53V19.81h27.42v10.66h1.53V13.71H2.29v-1.52h4.57v-1.53h6.09V9.14h6.1V7.62h6.09V6.09h6.1V0Zm0 16.76h1.53v-1.52h3.04v1.52h-1.52v1.52h-3.05Zm-7.62 0h1.53v-1.52h3.04v1.52h-1.52v1.52h-3.05Zm-7.62 0h1.53v-1.52h3.05v1.52h-1.53v1.52H9.9Zm-6.09 0v-1.52h3.05v1.52H5.33v1.52H2.29v-1.52Zm1.52-6.1H2.29V7.62h1.52v1.52h1.52ZM2.29 30.47h27.42V32H2.29Z" />
+                                     <path 
+                                     fill="currentColor"
+                                     d="M26.67 22.86h-1.53v1.52h-1.52v-1.52h-1.53v1.52h-1.52v1.52h1.52v1.53h1.53v1.52h1.52v-1.52h1.53V25.9h1.52v-1.52h-1.52zM6.86 25.9h10.66v1.53H6.86Zm0-3.04h10.66v1.52H6.86Z"/>
+                                </svg>
+                                <br />Start exploring</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+      <script src="index.js"></script>
+    </body>
+</html>
