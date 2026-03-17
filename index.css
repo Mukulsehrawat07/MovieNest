@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+   /* fonts */
+    --font-silkscreen: "Silkscreen", sans-serif;
+    --font-body: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* colours */
+    --color-bg: #e7f2d6;
+    --color-text: #869184;
+    --color-border: #c9e5c3;
+    --color-border-muted: #99a685;
+    --color-surface: #fff;
+    --color-surface-soft: #f9fcf7;
+    --color-surface-card: #f5f8f0;
+    --color-accent: #9daf81;
+    --color-accent-muted: #dae3d4;
+
+    /* font sizes */
+    --text-sm: 0.75rem;
+    --text-base: 0.875rem;
+    --text-md: 1rem;
+
+    /* spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2.5rem;
+    --radius-sm: 5px;
+    --radius-md: 6px;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* BASE */
+
+body {
+    background: var(--color-bg) url('/imgs/appbg.webp') repeat;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CRT scanline overlay */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.04),
+                rgba(0, 0, 0, 0.04) 1px,
+                transparent 1px,
+                transparent 2px);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* LAYOUT */
+
+.app {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding:  var(--space-lg) 0.625rem;
+}
+
+/* WINDOW STYLE */
+
+.window-title {
+    font-family: var(--font-silkscreen);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    background-color: var(--color-surface-soft);
+    padding: var(--space-xs) var(--space-sm);
+    letter-spacing: 0.1875em;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border: 1px solid var(--color-border);
+    border-bottom: 0;
+}
+
+.win-icon{
+    float: right;
+    opacity: 0.8;
+}
+
+.window-main{
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+/* Header/Intro */
+
+.intro {
+    display: block;
+    text-align: center;
+}
+
+.intro p {
+    padding-top: var(--space-sm);
+}
+
+/* Search */
+
+.search-bar{
+    z-index: 10;
+    display: flex;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 0.5px solid var(--color-border-muted);
+    margin-top: var(--space-md);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md) var(--space-sm) 2.5rem;
+    border: none;
+    background-color: var(--color-surface-soft);
+    font-size: var(--text-md);
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a8580' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0.875rem center;
+}
+
+.search-bar input::placeholder {
+    color: var(--color-accent);
+    opacity: 0.6;
+}
+
+.search-bar button {
+     font-family: var(--font-silkscreen);
+    font-size: var(--text-sm);
+    padding: var(--space-sm) 1.5rem;
+    background-color: var(--color-accent-muted);
+    color: var(--color-accent);
+    border: none;
+    border-left: 1px solid var(--color-border-muted);
+    letter-spacing: 0.1875em;
+    cursor: pointer;
+}
+
+.search-bar button:hover{
+    background-color: var(--color-accent);
+    color: var(--color-accent-muted);
+}
+
+/* Nav */
+
+nav {
+    margin-bottom: var(--space-sm);
+    text-align: center;
+    padding: var(--space-sm);
+}
+
+nav a {
+    margin: 0 0.625rem;
+    text-decoration: none;
+}
+
+/*  Shared: nav/watchlist */
+
+nav a,
+.watchlist-btn {
+    font-family: var(--font-silkscreen);
+    font-size: var(--text-sm);
+    display: inline-block;
+    color: var(--color-border-muted);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) 0.625rem;
+    background: var(--color-accent-muted);
+    border: 1px dotted var(--color-accent-muted);
+} 
+
+nav a:hover,
+.watchlist-btn:hover {
+    color: var(--color-accent-muted);
+    background-color: var(--color-border-muted);
+}
+
+/* Film Cards */
+
+.film-card {
+    display: flex;
+    gap: 0.875rem;
+    padding: 0.625rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface-card);
+    margin-bottom: var(--space-sm);
+    align-items: flex-start;
+}
+
+.left-container {
+    max-width: 100px;
+}
+
+.film-card img {
+    max-width: 100px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.film-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    align-self: flex-start;
+}
+
+.film-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+}
+
+.film-info h2 {
+    text-transform: uppercase;
+    font-size: var(--text-md);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    color: goldenrod;
+}
+
+.rating svg {
+    width: 0.8125em;
+    height: 0.8125em;
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: green;
+    display: inline-block;
+}
+
+.synopsis {
+    line-height: 1.6;
+}
+
+.watchlist-btn {
+    text-align: center;
+    width: 100%;
+}
+
+.watchlist-btn svg {
+    width: 0.875em;
+    height: 0.875em;
+    display: block;
+    margin: auto;
+}
+
+/* Empty State */
+
+.message {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    line-height: 2;
+    display: block;
+}
+
+.message img {
+    margin: auto;
+    display: block;
+}
+
+/* Github Button */
+
+.github-button {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #14801c;
+    z-index: 1000;
+}
+
+.github-button svg {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+    transition: color 0.3s ease;
+}
+
+.github-button:hover {
+    color: #0366d6;
+}
